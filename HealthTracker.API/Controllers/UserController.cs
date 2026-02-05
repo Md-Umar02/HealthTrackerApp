@@ -65,6 +65,7 @@ namespace HealthTracker.API.Controllers
         //}
 
         [Authorize(Roles = "ADMIN")]
+        [ResponseCache(CacheProfileName = "Default")]
         [HttpGet]
         public async Task<ActionResult<APIResponse>> GetAll()
         {
@@ -104,6 +105,7 @@ namespace HealthTracker.API.Controllers
         }
 
         [Authorize(Roles = "ADMIN")]
+        [ResponseCache(CacheProfileName = "Default")]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -200,6 +202,7 @@ namespace HealthTracker.API.Controllers
         }
 
         [Authorize(Roles = "USER")]
+        [ResponseCache(CacheProfileName = "Default")]
         [HttpGet("me")]
         public async Task<ActionResult<APIResponse>> GetMyProfile()
         {
