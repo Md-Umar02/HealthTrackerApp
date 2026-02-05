@@ -12,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +35,8 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     options.User.RequireUniqueEmail = true;
 }).AddEntityFrameworkStores<ApplicationDbContext>();
 
+builder.Services.AddResponseCaching();
+
 builder.Services.AddControllers(options =>
 {
     options.CacheProfiles.Add("Default", new CacheProfile
@@ -41,6 +44,17 @@ builder.Services.AddControllers(options =>
         Duration = 30,
     });
 });
+
+builder.Host.UseSerilog((context, config) =>
+{
+    config.WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day);
+
+    if(context.HostingEnvironment.IsDevelopment())
+    {
+        config.WriteTo.Console();
+    }
+});
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
 builder.Services.AddEndpointsApiExplorer();

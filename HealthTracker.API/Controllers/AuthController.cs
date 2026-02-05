@@ -16,11 +16,13 @@ namespace HealthTracker.API.Controllers
     public class AuthController : Controller
     {
         private readonly IAuthService _authService;
+        private readonly ILogger<AuthController> _logger;
         private readonly APIResponse _response;
-        public AuthController(IAuthService authService)
+        public AuthController(IAuthService authService, ILogger<AuthController> logger)
         {
             _authService = authService;
             _response = new APIResponse();
+            _logger = logger;
         }
 
         [HttpPost]
@@ -66,9 +68,12 @@ namespace HealthTracker.API.Controllers
                 _response.IsSuccess = true;
                 _response.DisplayMessage = CommonMessage.LoginSuccess;
                 _response.Result = user;
+
+                _logger.LogInformation("User {Email} logged in successfully.", request.Email);
             }
             catch (Exception)
             {
+                _logger.LogError("Login failed for user {Email}.", request.Email);
                 _response.StatusCode = HttpStatusCode.InternalServerError;
                 _response.DisplayMessage = CommonMessage.LoginFailed;
                 _response.AddError(CommonMessage.SystemError);
