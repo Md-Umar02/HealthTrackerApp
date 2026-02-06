@@ -1,0 +1,71 @@
+/* index.css - Index page only */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.index-page {
+    min-height: calc(100vh - 56px - 60px);
+    display: flex;
+    align-items: center;
+}
+
+.index-card {
+    background: white;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.index-title {
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.index-subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.index-btn-primary {
+    background: linear-gradient(to right, #667eea, #764ba2);
+    border: none;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: transform 0.2s;
+    color: white;
+}
+
+    .index-btn-primary:hover {
+        transform: translateY(-2px);
+        color: white;
+    }
+
+.index-btn-outline {
+    border: 2px solid #667eea;
+    color: #667eea;
+    padding: 12px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+    .index-btn-outline:hover {
+        background: #667eea;
+        color: white;
+    }
+
+.index-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}

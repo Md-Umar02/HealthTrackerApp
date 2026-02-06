@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "HealthTracker.API\\HealthTracker.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "HealthTracker.Web\\HealthTracker.Web.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

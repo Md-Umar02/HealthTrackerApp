@@ -4,5 +4,6 @@
     <Project Path="HealthTracker.Application/HealthTracker.Application.csproj" />
     <Project Path="HealthTracker.Domain/HealthTracker.Domain.csproj" />
     <Project Path="HealthTracker.Infrastructure/HealthTracker.Infrastructure.csproj" />
+    <Project Path="HealthTracker.Web/HealthTracker.Web.csproj" Id="51df34bb-b29b-4a73-b127-b03dac9e9877" />
   </Folder>
 </Solution>

@@ -1,0 +1,40 @@
+/* site.css - Global styles */
+
+/* Default layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+    /* Auth layout (for register/login pages) */
+    body.auth-layout {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        min-height: 100vh;
+    }
+
+        body.auth-layout .container,
+        body.auth-layout main.pb-3 {
+            background: transparent !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            max-width: 100% !important;
+        }
+
+        body.auth-layout footer {
+            background: transparent !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+            color: white !important;
+        }
+
+            body.auth-layout footer a {
+                color: rgba(255, 255, 255, 0.8) !important;
+            }
+
+                body.auth-layout footer a:hover {
+                    color: white !important;
+                }
+
+        /* Navbar in auth pages */
+        body.auth-layout .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
