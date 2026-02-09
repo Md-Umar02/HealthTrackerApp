@@ -53,7 +53,7 @@ namespace HealthTracker.Web.Pages.Auth
 
             if (!response.IsSuccessStatusCode)
             {
-                ErrorMessage = "Registration failed";
+                ErrorMessage = await response.Content.ReadAsStringAsync();
                 return Page();
             }
 

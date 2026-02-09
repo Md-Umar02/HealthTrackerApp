@@ -1,6 +1,6 @@
 [
   {
-    "Name": "New Profile",
+    "Name": "Health Tracker",
     "Projects": [
       {
         "Path": "HealthTracker.API\\HealthTracker.API.csproj",

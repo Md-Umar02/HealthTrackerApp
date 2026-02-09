@@ -43,13 +43,26 @@ namespace HealthTracker.API.Controllers
                 _response.DisplayMessage = CommonMessage.RegistrationSuccess;
                 _response.Result = user;
             }
-            catch (Exception)
+            catch (BadRequestException ex)
             {
-                _response.StatusCode = HttpStatusCode.InternalServerError;
-                _response.DisplayMessage = CommonMessage.RegistrationFailed;
-                _response.AddError(CommonMessage.SystemError);
+                return BadRequest(new 
+                { 
+                    message = CommonMessage.RegistrationFailed,
+                    errors = ex.ValidationErrors
+                });
             }
-            return (_response);
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = CommonMessage.RegistrationFailed,
+                    errors = ex.Message
+                });
+                //_response.StatusCode = HttpStatusCode.InternalServerError;
+                //_response.DisplayMessage = CommonMessage.RegistrationFailed;
+                //_response.AddError(ex.Message);
+            }
+            return _response;
         }
         [HttpPost]
         [Route("Login")]

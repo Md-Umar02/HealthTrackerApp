@@ -26,6 +26,7 @@ namespace HealthTracker.Application.ApplicationConstants
         public const string DeleteOperationFailed = "Delete Operation Failed";
 
         public const string RecordNotFound = "Record Not Found";
+        public const string AlreadyRegistered = "Email already registered";
         public const string SystemError = "Something Went Wrong";
     }
 }

@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
-using HealthTracker.Domain.Contracts;
 using HealthTracker.Application.DTO.Auth;
+using HealthTracker.Application.Exceptions;
 using HealthTracker.Application.Services.Interface;
+using HealthTracker.Domain.Contracts;
 using HealthTracker.Domain.Identity;
 using HealthTracker.Domain.Models;
 using Microsoft.AspNetCore.Identity;
@@ -35,6 +36,12 @@ namespace HealthTracker.Application.Services
 
         public async Task<AuthResponseDto?> RegisterAsync(AuthRegisterDto request)
         {
+            var existingUser = await _userManager.FindByEmailAsync(request.Email);
+            if (existingUser != null)
+            {
+                throw new BadRequestException("Email already registered");
+            }
+
             var user = new ApplicationUser
             {
                 Name = request.Name,
