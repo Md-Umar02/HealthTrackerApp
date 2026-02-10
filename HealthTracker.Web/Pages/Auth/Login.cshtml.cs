@@ -81,7 +81,7 @@ namespace HealthTracker.Web.Pages.Auth
                                 Expires = DateTimeOffset.UtcNow.AddHours(1)
                             });
 
-                        return RedirectToPage("/Index");
+                        return RedirectToPage("/Profile/Index");
                     }
                 }
 

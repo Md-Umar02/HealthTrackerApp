@@ -1,0 +1,39 @@
+﻿@page
+@model HealthTracker.Web.Pages.Profile.IndexModel
+
+<h2>My Profile</h2>
+
+@if (Model.User != null)
+{
+    <p><b>Name:</b> @Model.User.Name</p>
+    <p><b>Email:</b> @Model.User.Email</p>
+    <p><b>Age:</b> @Model.User.Age</p>
+
+    <h3>Health Metrics</h3>
+
+    @if (Model.User.HealthMetrics != null && Model.User.HealthMetrics.Any())
+    {
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Metric</th>
+                <th>Value</th>
+            </tr>
+            @foreach (var metric in Model.User.HealthMetrics)
+            {
+                <tr>
+                    <td>@metric.MetricType</td>
+                    <td>@metric.Value</td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p>No health metrics found.</p>
+    }
+
+    <br />
+    <a asp-page="/HealthMetrics/Create">Add Health Metric</a>
+    <br /><br />
+    <a asp-page="/Auth/Logout">Logout</a>
+}
