@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Text.Json;
-using HealthTracker.Web.Models;
+using HealthTracker.Web.Models.Common;
+using HealthTracker.Web.Models.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -33,30 +34,34 @@ namespace HealthTracker.Web.Pages.Profile
             // 3️⃣ Attach JWT
             client.DefaultRequestHeaders.Authorization =
                 new AuthenticationHeaderValue("Bearer", token);
-
-            // 4️⃣ Call API
-            var response = await client.GetAsync("api/User/me");
-
-            if (!response.IsSuccessStatusCode)
+            try
             {
-                return RedirectToPage("/Auth/Login");
+                var response = await client.GetAsync("api/User/me");
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return RedirectToPage("/Auth/Login");
+                }
+
+                // 5️⃣ Read response
+                var json = await response.Content.ReadAsStringAsync();
+
+                var apiResponse = JsonSerializer.Deserialize<ApiResponse<UserProfileDto>>(
+                    json,
+                    new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+                if(apiResponse != null)
+                {
+                    User = apiResponse.Result;
+                }
             }
-
-            // 5️⃣ Read response
-            var json = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(json);
-
-            var apiResponse = JsonSerializer.Deserialize<ApiResponse<UserProfileDto>>(
-                json,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-
-            User = apiResponse.Result;
+            catch (Exception)
+            {
+                return RedirectToPage("/Error");
+            }
+            // 4️⃣ Call API
 
             return Page();
-        }
-        public class ApiResponse<T>
-        {
-            public T Result { get; set; }
         }
     }
 }

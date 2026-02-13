@@ -1,0 +1,308 @@
+2026-02-13 10:56:09.655 +05:30 [INF] Executed DbCommand (180ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MetricTypes] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-13 10:56:10.833 +05:30 [INF] Executed DbCommand (157ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-13 10:56:11.083 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-13 10:56:11.924 +05:30 [INF] User profile is available. Using 'C:\Users\hello\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-13 10:56:13.187 +05:30 [INF] Now listening on: https://localhost:7057
+2026-02-13 10:56:13.189 +05:30 [INF] Now listening on: http://localhost:5171
+2026-02-13 10:56:13.461 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-13 10:56:13.639 +05:30 [INF] Hosting environment: Development
+2026-02-13 10:56:13.643 +05:30 [INF] Content root path: C:\Users\hello\source\repos\HealthTracker\HealthTracker.API
+2026-02-13 10:56:27.269 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger - null null
+2026-02-13 10:56:28.657 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger - 301 null null 1415.0014ms
+2026-02-13 10:56:28.671 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/index.html - null null
+2026-02-13 10:56:28.898 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/index.html - 200 null text/html;charset=utf-8 226.6378ms
+2026-02-13 10:56:29.033 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/swagger-ui.css - null null
+2026-02-13 10:56:29.034 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/index.css - null null
+2026-02-13 10:56:29.178 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_vs/browserLink - null null
+2026-02-13 10:56:29.178 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-13 10:56:29.260 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/swagger-ui.css - 304 null null 227.5006ms
+2026-02-13 10:56:29.260 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/index.css - 304 null null 226.0544ms
+2026-02-13 10:56:29.268 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - 200 16519 application/javascript; charset=utf-8 90.431ms
+2026-02-13 10:56:29.337 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_vs/browserLink - 200 null text/javascript; charset=UTF-8 159.4358ms
+2026-02-13 10:56:32.655 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - null null
+2026-02-13 10:56:32.713 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 58.3743ms
+2026-02-13 10:59:11.079 +05:30 [INF] Executed DbCommand (283ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MetricTypes] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-13 10:59:12.236 +05:30 [INF] Executed DbCommand (222ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-13 10:59:12.487 +05:30 [INF] Executed DbCommand (65ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-13 10:59:12.905 +05:30 [INF] User profile is available. Using 'C:\Users\hello\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-13 10:59:13.701 +05:30 [INF] Now listening on: https://localhost:7057
+2026-02-13 10:59:13.702 +05:30 [INF] Now listening on: http://localhost:5171
+2026-02-13 10:59:13.880 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-13 10:59:14.252 +05:30 [INF] Hosting environment: Development
+2026-02-13 10:59:14.793 +05:30 [INF] Content root path: C:\Users\hello\source\repos\HealthTracker\HealthTracker.API
+2026-02-13 10:59:14.908 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger - null null
+2026-02-13 10:59:15.270 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger - 301 null null 374.9573ms
+2026-02-13 10:59:16.193 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-13 10:59:16.724 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_vs/browserLink - null null
+2026-02-13 10:59:17.943 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - 200 16519 application/javascript; charset=utf-8 1749.7918ms
+2026-02-13 10:59:18.052 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1328.0687ms
+2026-02-13 10:59:26.291 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - null null
+2026-02-13 10:59:26.355 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 63.5527ms
+2026-02-13 10:59:53.160 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7057/api/Auth/register - application/json; charset=utf-8 66
+2026-02-13 10:59:53.438 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API)'
+2026-02-13 10:59:53.760 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] Register(HealthTracker.Application.DTO.Auth.AuthRegisterDto) on controller HealthTracker.API.Controllers.AuthController (HealthTracker.API).
+2026-02-13 10:59:57.009 +05:30 [INF] Executed DbCommand (65ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-02-13 10:59:59.148 +05:30 [INF] Executed DbCommand (1,447ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Age], [Created], [Email], [IdentityUserId], [Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2026-02-13 10:59:59.760 +05:30 [INF] Executed DbCommand (296ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-02-13 10:59:59.974 +05:30 [INF] Executing ObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-02-13 11:00:00.041 +05:30 [INF] Executed action HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API) in 6267.3435ms
+2026-02-13 11:00:00.193 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API)'
+2026-02-13 11:00:00.220 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7057/api/Auth/register - 200 null application/json; charset=utf-8 7060.8788ms
+2026-02-13 11:03:57.572 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7057/api/Auth/register - application/json; charset=utf-8 67
+2026-02-13 11:03:57.696 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API)'
+2026-02-13 11:03:57.713 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] Register(HealthTracker.Application.DTO.Auth.AuthRegisterDto) on controller HealthTracker.API.Controllers.AuthController (HealthTracker.API).
+2026-02-13 11:04:08.407 +05:30 [INF] Executed DbCommand (106ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-02-13 11:04:14.719 +05:30 [INF] Executed DbCommand (257ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Age], [Created], [Email], [IdentityUserId], [Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2026-02-13 11:04:14.793 +05:30 [INF] Executed DbCommand (20ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-02-13 11:04:15.172 +05:30 [INF] Executing ObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-02-13 11:04:15.188 +05:30 [INF] Executed action HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API) in 17467.6309ms
+2026-02-13 11:04:15.203 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API)'
+2026-02-13 11:04:15.209 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7057/api/Auth/register - 200 null application/json; charset=utf-8 17659.5285ms
+2026-02-13 11:04:53.617 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7057/api/Auth/register - application/json; charset=utf-8 67
+2026-02-13 11:04:53.635 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API)'
+2026-02-13 11:04:53.637 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] Register(HealthTracker.Application.DTO.Auth.AuthRegisterDto) on controller HealthTracker.API.Controllers.AuthController (HealthTracker.API).
+2026-02-13 11:04:57.435 +05:30 [INF] Executed DbCommand (69ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-02-13 11:05:19.738 +05:30 [INF] Executed DbCommand (61ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Age], [Created], [Email], [IdentityUserId], [Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2026-02-13 11:05:29.362 +05:30 [INF] Executed DbCommand (333ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-02-13 11:05:51.926 +05:30 [INF] Executing ObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-02-13 11:05:52.069 +05:30 [INF] Executed action HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API) in 58428.8462ms
+2026-02-13 11:05:52.083 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API)'
+2026-02-13 11:05:52.085 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7057/api/Auth/register - 200 null application/json; charset=utf-8 58469.5216ms
+2026-02-13 11:07:39.860 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7057/api/Auth/register - application/json; charset=utf-8 65
+2026-02-13 11:07:39.871 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API)'
+2026-02-13 11:07:39.873 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] Register(HealthTracker.Application.DTO.Auth.AuthRegisterDto) on controller HealthTracker.API.Controllers.AuthController (HealthTracker.API).
+2026-02-13 11:07:51.508 +05:30 [INF] Executed DbCommand (57ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-02-13 12:11:00.474 +05:30 [INF] Executed DbCommand (1,008ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MetricTypes] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-13 12:11:02.202 +05:30 [INF] Executed DbCommand (471ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-13 12:11:02.761 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-13 12:11:03.279 +05:30 [INF] User profile is available. Using 'C:\Users\hello\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-13 12:11:04.876 +05:30 [INF] Now listening on: https://localhost:7057
+2026-02-13 12:11:04.882 +05:30 [INF] Now listening on: http://localhost:5171
+2026-02-13 12:11:05.223 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-13 12:11:05.355 +05:30 [INF] Hosting environment: Development
+2026-02-13 12:11:05.357 +05:30 [INF] Content root path: C:\Users\hello\source\repos\HealthTracker\HealthTracker.API
+2026-02-13 12:11:07.055 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger - null null
+2026-02-13 12:11:10.318 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger - 301 null null 3271.9135ms
+2026-02-13 12:11:12.188 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-13 12:11:12.188 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_vs/browserLink - null null
+2026-02-13 12:11:12.247 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - 200 16519 application/javascript; charset=utf-8 58.7993ms
+2026-02-13 12:11:12.307 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_vs/browserLink - 200 null text/javascript; charset=UTF-8 119.0437ms
+2026-02-13 12:11:14.286 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - null null
+2026-02-13 12:11:14.351 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 65.6885ms
+2026-02-13 12:11:48.818 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7057/api/Auth/register - application/json; charset=utf-8 67
+2026-02-13 12:11:48.996 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API)'
+2026-02-13 12:11:49.048 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] Register(HealthTracker.Application.DTO.Auth.AuthRegisterDto) on controller HealthTracker.API.Controllers.AuthController (HealthTracker.API).
+2026-02-13 12:11:56.078 +05:30 [INF] Executed DbCommand (127ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-02-13 12:12:38.667 +05:30 [INF] Executed DbCommand (374ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Age], [Created], [Email], [IdentityUserId], [Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2026-02-13 12:12:49.906 +05:30 [INF] Executed DbCommand (52ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-02-13 12:13:04.246 +05:30 [INF] Executing ObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-02-13 12:13:04.467 +05:30 [INF] Executed action HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API) in 75405.8475ms
+2026-02-13 12:13:04.483 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API)'
+2026-02-13 12:13:04.516 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7057/api/Auth/register - 200 null application/json; charset=utf-8 75698.0229ms
+2026-02-13 12:14:13.645 +05:30 [INF] Executed DbCommand (639ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MetricTypes] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-13 12:14:14.226 +05:30 [INF] Executed DbCommand (129ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-13 12:14:14.404 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-13 12:14:14.825 +05:30 [INF] User profile is available. Using 'C:\Users\hello\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-13 12:14:15.381 +05:30 [INF] Now listening on: https://localhost:7057
+2026-02-13 12:14:15.404 +05:30 [INF] Now listening on: http://localhost:5171
+2026-02-13 12:14:15.622 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-13 12:14:15.634 +05:30 [INF] Hosting environment: Development
+2026-02-13 12:14:15.746 +05:30 [INF] Content root path: C:\Users\hello\source\repos\HealthTracker\HealthTracker.API
+2026-02-13 12:14:16.764 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger - null null
+2026-02-13 12:14:17.411 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger - 301 null null 662.1543ms
+2026-02-13 12:14:17.562 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_vs/browserLink - null null
+2026-02-13 12:14:17.562 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-13 12:14:17.734 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - 200 16519 application/javascript; charset=utf-8 172.8623ms
+2026-02-13 12:14:17.843 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_vs/browserLink - 200 null text/javascript; charset=UTF-8 281.5131ms
+2026-02-13 12:14:18.118 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - null null
+2026-02-13 12:14:18.258 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 139.5563ms
+2026-02-13 12:18:06.568 +05:30 [INF] Executed DbCommand (2,738ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MetricTypes] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-02-13 12:18:08.528 +05:30 [INF] Executed DbCommand (734ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-13 12:18:08.808 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-02-13 12:18:09.245 +05:30 [INF] User profile is available. Using 'C:\Users\hello\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-02-13 12:18:09.870 +05:30 [INF] Now listening on: https://localhost:7057
+2026-02-13 12:18:09.872 +05:30 [INF] Now listening on: http://localhost:5171
+2026-02-13 12:18:10.054 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-02-13 12:18:10.055 +05:30 [INF] Hosting environment: Development
+2026-02-13 12:18:10.060 +05:30 [INF] Content root path: C:\Users\hello\source\repos\HealthTracker\HealthTracker.API
+2026-02-13 12:18:11.964 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger - null null
+2026-02-13 12:18:12.828 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger - 301 null null 882.0455ms
+2026-02-13 12:18:12.954 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_vs/browserLink - null null
+2026-02-13 12:18:12.957 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - null null
+2026-02-13 12:18:14.802 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - 200 16519 application/javascript; charset=utf-8 1844.5334ms
+2026-02-13 12:18:14.912 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1958.0158ms
+2026-02-13 12:18:16.855 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - null null
+2026-02-13 12:18:16.916 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 61.0246ms
+2026-02-13 12:20:09.329 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7057/api/Auth/register - application/json; charset=utf-8 68
+2026-02-13 12:20:09.695 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API)'
+2026-02-13 12:20:09.796 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] Register(HealthTracker.Application.DTO.Auth.AuthRegisterDto) on controller HealthTracker.API.Controllers.AuthController (HealthTracker.API).
+2026-02-13 12:20:14.889 +05:30 [INF] Executed DbCommand (57ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-02-13 12:20:18.732 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-02-13 12:20:18.790 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-02-13 12:20:19.195 +05:30 [INF] Executed DbCommand (100ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 4000), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [Age], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [Name], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2026-02-13 12:20:25.676 +05:30 [INF] Executed DbCommand (71ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-02-13 12:20:25.801 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2026-02-13 12:20:25.813 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-02-13 12:20:25.852 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-02-13 12:20:25.868 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-02-13 12:20:26.013 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p18='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p19='?' (Size = 4000), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 4000), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (DbType = Boolean), @p17='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [Age] = @p3, [ConcurrencyStamp] = @p4, [Email] = @p5, [EmailConfirmed] = @p6, [LockoutEnabled] = @p7, [LockoutEnd] = @p8, [Name] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [SecurityStamp] = @p15, [TwoFactorEnabled] = @p16, [UserName] = @p17
+OUTPUT 1
+WHERE [Id] = @p18 AND [ConcurrencyStamp] = @p19;
+2026-02-13 12:20:40.969 +05:30 [INF] Executed DbCommand (366ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Age], [Created], [Email], [IdentityUserId], [Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2026-02-13 12:20:48.043 +05:30 [INF] Executed DbCommand (77ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-02-13 12:21:00.730 +05:30 [INF] Executing ObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-02-13 12:21:00.895 +05:30 [INF] Executed action HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API) in 51086.613ms
+2026-02-13 12:21:00.901 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.AuthController.Register (HealthTracker.API)'
+2026-02-13 12:21:00.913 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7057/api/Auth/register - 200 null application/json; charset=utf-8 51597.2963ms

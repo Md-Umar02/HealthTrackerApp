@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HealthTracker.Web.Models;
+using HealthTracker.Web.Models.Common;
+using HealthTracker.Web.Models.DTO;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text;
 using System.Text.Json;
@@ -58,21 +61,20 @@ namespace HealthTracker.Web.Pages.Auth
 
                 // Deserialize into our Wrapper Model
                 var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-                var apiResponse = JsonSerializer.Deserialize<ApiResponseWrapper>(responseContent, options);
+                var apiResponse = JsonSerializer.Deserialize<ApiResponse<LoginData>>(responseContent, options);
 
                 // Dig into the 'Result' object to find the token
                 if (apiResponse != null && apiResponse.IsSuccess && apiResponse.Result != null)
                 {
                     // Since Result is an 'object' or 'JsonElement', we convert it to our LoginData class
-                    var resultJson = apiResponse.Result.ToString();
-                    var loginData = JsonSerializer.Deserialize<LoginData>(resultJson, options);
+                    var token = apiResponse.Result.Token;
 
-                    if (!string.IsNullOrEmpty(loginData?.Token))
+                    if (!string.IsNullOrEmpty(token))
                     {
                         // Save the JWT to a secure HttpOnly cookie
                         HttpContext.Response.Cookies.Append(
                             "auth_token",
-                            loginData.Token,
+                            token,
                             new CookieOptions
                             {
                                 HttpOnly = true,
@@ -93,22 +95,6 @@ namespace HealthTracker.Web.Pages.Auth
                 ErrorMessage = "An error occurred while connecting to the server.";
                 return Page();
             }
-        }
-
-        // --- Helper Models to match your Clean Architecture API Structure ---
-
-        private class ApiResponseWrapper
-        {
-            public bool IsSuccess { get; set; }
-            public object Result { get; set; } // This holds the User/Token object
-            public string DisplayMessage { get; set; }
-            public int StatusCode { get; set; }
-        }
-
-        private class LoginData
-        {
-            public string Token { get; set; }
-            public string Email { get; set; }
         }
     }
 }

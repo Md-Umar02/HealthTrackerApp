@@ -9,7 +9,6 @@
 <link href="~/css/auth.css" rel="stylesheet" />
 
 <style>
-    /* Ensure form is properly sized */
     .auth-page .container {
         max-width: 450px;
         margin: 0 auto;
@@ -64,7 +63,7 @@
                             <span asp-validation-for="Age" class="text-danger small"></span>
                         </div>
 
-                        <div class="mb-4">
+                        <div class="mb-3">
                             <label for="Password" class="form-label">
                                 <i class="bi bi-lock-fill me-1"></i>Password
                             </label>
@@ -72,6 +71,7 @@
                                    class="form-control auth-input"
                                    placeholder="Create a strong password"
                                    autocomplete="new-password"
+                                   id="password"
                                    required />
                             <span asp-validation-for="Password" class="text-danger small"></span>
                             <div class="form-text">
@@ -80,8 +80,21 @@
                             </div>
                         </div>
 
+                        <!-- Confirm Password Field -->
+                        <div class="mb-4">
+                            <label for="confirmPassword" class="form-label">
+                                <i class="bi bi-lock-fill me-1"></i>Confirm Password
+                            </label>
+                            <input type="password"
+                                   class="form-control auth-input"
+                                   id="confirmPassword"
+                                   placeholder="Re-enter your password"
+                                   required />
+                            <small id="passwordMatchMessage" class="text-danger small"></small>
+                        </div>
+
                         <div class="d-grid gap-2 mb-3">
-                            <button type="submit" class="btn auth-btn-primary">
+                            <button type="submit" id="submitBtn" class="btn auth-btn-primary">
                                 <i class="bi bi-check-circle-fill me-2"></i>Create Account
                             </button>
                         </div>
@@ -112,3 +125,7 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script src="~/js/auth.js" asp-append-version="true"></script>
+}

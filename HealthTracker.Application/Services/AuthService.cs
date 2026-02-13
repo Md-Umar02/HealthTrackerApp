@@ -55,36 +55,38 @@ namespace HealthTracker.Application.Services
             if (result.Succeeded)
             {
                 await _userManager.AddToRoleAsync(user, "USER");
+
+                var domainUser = new User
+                {
+                    IdentityUserId = user.Id,
+                    Name = request.Name,
+                    Email = request.Email,
+                    Age = request.Age,
+                    Created = DateTime.UtcNow
+                };
+                await _userRepository.CreateAsync(domainUser);
+
+                var (token, expiration) = await GenerateTokenAsync(user);
+
+                return new AuthResponseDto
+                {
+                    Token = token,
+                    Expiration = expiration
+                };
             }
 
-            var domainUser = new User
-            {
-                IdentityUserId = user.Id,
-                Name = request.Name,
-                Email = request.Email,
-                Age = request.Age,
-                Created = DateTime.UtcNow
-            };
-            await _userRepository.CreateAsync(domainUser);
-
-            var (token, expiration) = await GenerateTokenAsync(user);
-
-            return new AuthResponseDto
-            {
-                Token = token,
-                Expiration = expiration
-            };
-
+            throw new BadRequestException(string.Join(", ", result.Errors.Select(e => e.Description)));
         }
         public async Task<AuthResponseDto?> LoginAsync(AuthRequestDto request)
         {
             var user = await _userManager.FindByEmailAsync(request.Email);
             if (user == null)
             {
-                throw new Exception("Invalid Email Address");
+                throw new NotFoundException("User not found with this email");
             }
+
             var result = await _signInManager.PasswordSignInAsync(
-                user,
+                user,   
                 request.Password,
                 isPersistent: true,
                 lockoutOnFailure: true
@@ -105,12 +107,12 @@ namespace HealthTracker.Application.Services
             {
                 if (result.IsLockedOut)
                 {
-                    throw new Exception("Account is locked due to multiple failed login attempts");
+                    throw new UnauthorizedException("Account is locked due to multiple failed login attempts");
                 }
 
                 if (result.IsNotAllowed)
                 {
-                    throw new Exception("Login not allowed. Please confirm your email");
+                    throw new UnauthorizedException("Login not allowed. Please confirm your email");
                 }
 
                 if (invalidCredential == false)
@@ -119,16 +121,19 @@ namespace HealthTracker.Application.Services
                 }
 
                 //    // Default failure
-                throw new Exception("Invalid email or password");
+                throw new UnauthorizedException("Invalid email or password");
             }
         }
         private async Task<(string Token, DateTime Expiration)> GenerateTokenAsync(ApplicationUser user)
-        { 
+        {
             //var jwtKey = _config["JwtSettings:Key"];
             //if (jwtKey == null)
             //{
             //    throw new Exception("JWT Key is not configured.");
             //}
+            var jwtKey = _config["JwtSettings:Key"] ?? throw new InvalidOperationException("JWT Key is not configured");
+            var jwtDuration = _config["JwtSettings:DurationInMinutes"] ?? throw new InvalidOperationException("JWT Duration is not configured");
+
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JwtSettings:Key"]));
             var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
