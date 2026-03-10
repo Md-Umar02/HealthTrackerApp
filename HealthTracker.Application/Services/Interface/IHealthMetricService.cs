@@ -19,5 +19,6 @@ namespace HealthTracker.Application.Services.Interface
         Task UpdateAsync(UpdateHealthMetricDto updateHealthMetricDto);
         Task<HealthMetricDto?> GetByIdAsync(int id);
         Task DeleteAsync(int id);
+        Task <IEnumerable<HealthMetricDto>>GetByIdentityUserAsync(string identityUserId);
     }
 }

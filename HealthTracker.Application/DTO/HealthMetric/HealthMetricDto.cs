@@ -13,5 +13,6 @@ namespace HealthTracker.Application.DTO.HealthMetric
         //public int UserId { get; set; }
         public string MetricType { get; set; }
         public double Value { get; set; }
+        public DateTime RecordedAt { get; set; }
     }
 }

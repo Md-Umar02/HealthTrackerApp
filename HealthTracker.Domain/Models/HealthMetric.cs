@@ -20,5 +20,6 @@ namespace HealthTracker.Domain.Models
 
         [Required]
         public double Value { get; set; }
+        public DateTime RecordedAt { get; set; } = DateTime.UtcNow;
     }
 }

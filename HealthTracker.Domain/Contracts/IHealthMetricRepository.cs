@@ -9,6 +9,7 @@ namespace HealthTracker.Domain.Contracts
 {
     public interface IHealthMetricRepository : IGenericRepository<HealthMetric>
     {
+        Task<IEnumerable<HealthMetric>> GetByUserIdAsync(int userId);
         Task UpdateAsync(HealthMetric entity);
     }
 }

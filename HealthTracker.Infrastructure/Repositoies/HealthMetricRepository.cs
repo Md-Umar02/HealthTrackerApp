@@ -29,6 +29,16 @@ namespace HealthTracker.Infrastructure.Repositoies
                 .Include(hm => hm.User)
                 .FirstOrDefaultAsync(hm => hm.Id == id);
         }
+
+        public async Task<IEnumerable<HealthMetric>> GetByUserIdAsync(int userId)
+        {
+            return await _context.HealthMetrics
+                .Include(h => h.MetricType)
+                .Where(h => h.UserId == userId)
+                .OrderByDescending(h => h.RecordedAt)
+                .ToListAsync();
+        }
+
         public async Task UpdateAsync(HealthMetric entity)
         {
             _context.Update(entity);

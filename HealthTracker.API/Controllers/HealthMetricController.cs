@@ -5,6 +5,7 @@ using HealthTracker.Application.InputModels;
 using HealthTracker.Application.Services;
 using HealthTracker.Application.Services.Interface;
 using HealthTracker.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
@@ -186,6 +187,38 @@ namespace HealthTracker.API.Controllers
                 _response.AddError(CommonMessage.SystemError);
             }
             
+            return Ok(_response);
+        }
+
+        [Authorize(Roles = "USER")]
+        [HttpGet("me")]
+        public async Task<ActionResult<APIResponse>> GetMyMetrics()
+        {
+            try
+            {
+                // 🔐 Get identity user id from JWT
+                var identityUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                if (identityUserId == null)
+                {
+                    _response.StatusCode = HttpStatusCode.Unauthorized;
+                    _response.DisplayMessage = "User not authenticated";
+                    return Ok(_response);
+                }
+
+                // 👇 Ask service to return ONLY this user's metrics
+                var metrics = await _healthMetricService.GetByIdentityUserAsync(identityUserId);
+
+                _response.StatusCode = HttpStatusCode.OK;
+                _response.IsSuccess = true;
+                _response.Result = metrics;
+            }
+            catch (Exception)
+            {
+                _response.StatusCode = HttpStatusCode.InternalServerError;
+                _response.AddError(CommonMessage.SystemError);
+            }
+
             return Ok(_response);
         }
     }

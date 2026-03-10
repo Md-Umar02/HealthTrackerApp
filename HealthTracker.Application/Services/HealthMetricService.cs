@@ -102,6 +102,20 @@ namespace HealthTracker.Application.Services
             return _mapper.Map<HealthMetricDto>(user);
         }
 
+        public async Task<IEnumerable<HealthMetricDto>> GetByIdentityUserAsync(string identityUserId)
+        {
+            // 🔎 Find domain user using identity id
+            var user = await _userRepository.GetByIdentityIdAsync(identityUserId);
+
+            if (user == null)
+                throw new Exception("User not found");
+
+            // 🔎 Get metrics using domain user id
+            var metrics = await _healthMetricRepository.GetByUserIdAsync(user.Id);
+
+            return _mapper.Map<IEnumerable<HealthMetricDto>>(metrics);
+        }
+
         public async Task<PaginationVM<HealthMetricDto>> GetPagination(PaginationInputModel pagination)
         {
             var source = await _healthMetricRepository.GetAllAsync();

@@ -1,0 +1,22 @@
+﻿@page
+@model HealthTracker.Web.Pages.HealthMetrics.CreateModel
+
+<h2>Add Health Metric</h2>
+
+<form method="post">
+    <label>Metric Type</label><br />
+    <select asp-for="MetricTypeId">
+        <option value="1">Heart Rate</option>
+        <option value="2">Steps</option>
+        <option value="3">Calories</option>
+    </select>
+
+    <br /><br />
+
+    <label>Value</label><br />
+    <input asp-for="Value" />
+
+    <br /><br />
+
+    <button type="submit">Save</button>
+</form>

@@ -18,7 +18,7 @@
                 <th>Metric</th>
                 <th>Value</th>
             </tr>
-            @foreach (var metric in Model.User.HealthMetrics)
+            @foreach (var metric in Model.User.HealthMetrics.Take(5))
             {
                 <tr>
                     <td>@metric.MetricType</td>
@@ -34,6 +34,8 @@
 
     <br />
     <a asp-page="/HealthMetrics/Create">Add Health Metric</a>
+    <br /><br />
+    <a asp-page="/HealthMetrics/Index">View All Metrics</a>
     <br /><br />
     <a asp-page="/Auth/Logout">Logout</a>
 }
