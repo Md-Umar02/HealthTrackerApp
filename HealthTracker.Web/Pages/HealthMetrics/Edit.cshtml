@@ -1,0 +1,19 @@
+﻿@page "{id:int}"
+@model HealthTracker.Web.Pages.HealthMetrics.EditModel
+
+<h2>Edit Health Metric</h2>
+
+<form method="post">
+
+    <input type="hidden" asp-for="Metric.Id" />
+
+    <div>
+        <label>Value</label>
+        <input asp-for="Metric.Value" />
+    </div>
+
+    <br />
+
+    <button type="submit">Update</button>
+
+</form>

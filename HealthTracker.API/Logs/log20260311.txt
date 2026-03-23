@@ -1,0 +1,571 @@
+2026-03-11 05:44:45.316 +05:30 [INF] Executed DbCommand (72ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MetricTypes] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-11 05:44:46.267 +05:30 [INF] Executed DbCommand (338ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-11 05:44:47.138 +05:30 [INF] Executed DbCommand (438ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-11 05:44:47.519 +05:30 [INF] User profile is available. Using 'C:\Users\hello\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-11 05:44:48.390 +05:30 [INF] Now listening on: https://localhost:7057
+2026-03-11 05:44:48.391 +05:30 [INF] Now listening on: http://localhost:5171
+2026-03-11 05:44:48.678 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-11 05:44:48.693 +05:30 [INF] Hosting environment: Development
+2026-03-11 05:44:48.700 +05:30 [INF] Content root path: C:\Users\hello\source\repos\HealthTracker\HealthTracker.API
+2026-03-11 05:44:50.002 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger - null null
+2026-03-11 05:44:50.264 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger - 301 null null 273.6276ms
+2026-03-11 05:44:50.352 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-11 05:44:50.352 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_vs/browserLink - null null
+2026-03-11 05:44:50.420 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - 200 14939 application/javascript; charset=utf-8 68.103ms
+2026-03-11 05:44:50.485 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_vs/browserLink - 200 null text/javascript; charset=UTF-8 133.1888ms
+2026-03-11 05:44:52.744 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - null null
+2026-03-11 05:44:53.172 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 427.9012ms
+2026-03-11 05:45:06.830 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7057/api/Auth/Login - application/json; charset=utf-8 48
+2026-03-11 05:45:06.970 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API)'
+2026-03-11 05:45:07.002 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] Login(HealthTracker.Application.DTO.Auth.AuthRequestDto) on controller HealthTracker.API.Controllers.AuthController (HealthTracker.API).
+2026-03-11 05:45:07.158 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-11 05:45:07.481 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-03-11 05:45:07.556 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-11 05:45:07.567 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-11 05:45:07.590 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-03-11 05:45:07.658 +05:30 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-03-11 05:45:07.832 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-11 05:45:07.900 +05:30 [INF] User user@gmail.com logged in successfully.
+2026-03-11 05:45:07.914 +05:30 [INF] Executing ObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:45:07.944 +05:30 [INF] Executed action HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API) in 933.8061ms
+2026-03-11 05:45:07.946 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API)'
+2026-03-11 05:45:07.956 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7057/api/Auth/Login - 200 null application/json; charset=utf-8 1126.9586ms
+2026-03-11 05:45:08.008 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/User/me - null null
+2026-03-11 05:45:08.141 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.UserController.GetMyProfile (HealthTracker.API)'
+2026-03-11 05:45:08.149 +05:30 [INF] Route matched with {action = "GetMyProfile", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetMyProfile() on controller HealthTracker.API.Controllers.UserController (HealthTracker.API).
+2026-03-11 05:45:08.548 +05:30 [INF] Executed DbCommand (54ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Age], [u0].[Created], [u0].[Email], [u0].[IdentityUserId], [u0].[Name], [s].[Id], [s].[Created], [s].[MetricTypeId], [s].[RecordedAt], [s].[UserId], [s].[Value], [s].[Id0], [s].[Created0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+    FROM [Users] AS [u]
+    WHERE [u].[IdentityUserId] = @__userId_0
+) AS [u0]
+LEFT JOIN (
+    SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id] AS [Id0], [m].[Created] AS [Created0], [m].[Name]
+    FROM [HealthMetrics] AS [h]
+    INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+) AS [s] ON [u0].[Id] = [s].[UserId]
+ORDER BY [u0].[Id], [s].[Id]
+2026-03-11 05:45:08.644 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:45:08.657 +05:30 [INF] Executed action HealthTracker.API.Controllers.UserController.GetMyProfile (HealthTracker.API) in 505.3335ms
+2026-03-11 05:45:08.663 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.UserController.GetMyProfile (HealthTracker.API)'
+2026-03-11 05:45:08.674 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/User/me - 200 null application/json; charset=utf-8 665.428ms
+2026-03-11 05:45:12.628 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - null null
+2026-03-11 05:45:12.634 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:45:12.642 +05:30 [INF] Route matched with {action = "GetMyMetrics", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetMyMetrics() on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:45:12.673 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Age], [u0].[Created], [u0].[Email], [u0].[IdentityUserId], [u0].[Name], [s].[Id], [s].[Created], [s].[MetricTypeId], [s].[RecordedAt], [s].[UserId], [s].[Value], [s].[Id0], [s].[Created0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+    FROM [Users] AS [u]
+    WHERE [u].[IdentityUserId] = @__userId_0
+) AS [u0]
+LEFT JOIN (
+    SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id] AS [Id0], [m].[Created] AS [Created0], [m].[Name]
+    FROM [HealthMetrics] AS [h]
+    INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+) AS [s] ON [u0].[Id] = [s].[UserId]
+ORDER BY [u0].[Id], [s].[Id]
+2026-03-11 05:45:12.701 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id], [m].[Created], [m].[Name]
+FROM [HealthMetrics] AS [h]
+INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+WHERE [h].[UserId] = @__userId_0
+ORDER BY [h].[RecordedAt] DESC
+2026-03-11 05:45:12.712 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:45:12.716 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API) in 71.6189ms
+2026-03-11 05:45:12.718 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:45:12.720 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - 200 null application/json; charset=utf-8 92.639ms
+2026-03-11 05:45:17.516 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/HealthMetric/3016 - null null
+2026-03-11 05:45:17.523 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API)'
+2026-03-11 05:45:17.528 +05:30 [INF] Route matched with {action = "GetById", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetById(Int32) on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:45:17.582 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id], [m].[Created], [m].[Name], [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+FROM [HealthMetrics] AS [h]
+INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+INNER JOIN [Users] AS [u] ON [h].[UserId] = [u].[Id]
+WHERE [h].[Id] = @__id_0
+2026-03-11 05:45:17.597 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:45:17.599 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API) in 67.659ms
+2026-03-11 05:45:17.606 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API)'
+2026-03-11 05:45:17.608 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/HealthMetric/3016 - 200 null application/json; charset=utf-8 92.9717ms
+2026-03-11 05:45:17.624 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/MetricType - null null
+2026-03-11 05:45:17.628 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API)'
+2026-03-11 05:45:17.635 +05:30 [INF] Route matched with {action = "GetAll", controller = "MetricType"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetAll() on controller HealthTracker.API.Controllers.MetricTypeController (HealthTracker.API).
+2026-03-11 05:45:17.669 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Created], [m].[Name]
+FROM [MetricTypes] AS [m]
+2026-03-11 05:45:17.676 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:45:17.680 +05:30 [INF] Executed action HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API) in 42.3808ms
+2026-03-11 05:45:17.683 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API)'
+2026-03-11 05:45:17.688 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/MetricType - 200 null application/json; charset=utf-8 64.8205ms
+2026-03-11 05:45:22.353 +05:30 [INF] Request starting HTTP/1.1 PUT https://localhost:7057/api/HealthMetric/Update/3016 - application/json; charset=utf-8 40
+2026-03-11 05:45:22.358 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.Update (HealthTracker.API)'
+2026-03-11 05:45:22.365 +05:30 [INF] Route matched with {action = "Update", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(HealthTracker.Application.DTO.HealthMetric.UpdateHealthMetricDto) on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:45:22.394 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-03-11 05:45:22.423 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.Update (HealthTracker.API) in 49.5673ms
+2026-03-11 05:45:22.426 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.Update (HealthTracker.API)'
+2026-03-11 05:45:22.428 +05:30 [INF] Request finished HTTP/1.1 PUT https://localhost:7057/api/HealthMetric/Update/3016 - 400 null application/problem+json; charset=utf-8 74.4157ms
+2026-03-11 05:45:22.451 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - null null
+2026-03-11 05:45:22.455 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:45:22.456 +05:30 [INF] Route matched with {action = "GetMyMetrics", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetMyMetrics() on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:45:22.468 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Age], [u0].[Created], [u0].[Email], [u0].[IdentityUserId], [u0].[Name], [s].[Id], [s].[Created], [s].[MetricTypeId], [s].[RecordedAt], [s].[UserId], [s].[Value], [s].[Id0], [s].[Created0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+    FROM [Users] AS [u]
+    WHERE [u].[IdentityUserId] = @__userId_0
+) AS [u0]
+LEFT JOIN (
+    SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id] AS [Id0], [m].[Created] AS [Created0], [m].[Name]
+    FROM [HealthMetrics] AS [h]
+    INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+) AS [s] ON [u0].[Id] = [s].[UserId]
+ORDER BY [u0].[Id], [s].[Id]
+2026-03-11 05:45:22.475 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id], [m].[Created], [m].[Name]
+FROM [HealthMetrics] AS [h]
+INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+WHERE [h].[UserId] = @__userId_0
+ORDER BY [h].[RecordedAt] DESC
+2026-03-11 05:45:22.478 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:45:22.480 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API) in 21.8818ms
+2026-03-11 05:45:22.482 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:45:22.485 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - 200 null application/json; charset=utf-8 34.4879ms
+2026-03-11 05:45:30.392 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/HealthMetric/3016 - null null
+2026-03-11 05:45:30.397 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API)'
+2026-03-11 05:45:30.403 +05:30 [INF] Route matched with {action = "GetById", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetById(Int32) on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:45:30.412 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id], [m].[Created], [m].[Name], [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+FROM [HealthMetrics] AS [h]
+INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+INNER JOIN [Users] AS [u] ON [h].[UserId] = [u].[Id]
+WHERE [h].[Id] = @__id_0
+2026-03-11 05:45:30.418 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:45:30.419 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API) in 14.3604ms
+2026-03-11 05:45:30.421 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API)'
+2026-03-11 05:45:30.423 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/HealthMetric/3016 - 200 null application/json; charset=utf-8 30.9342ms
+2026-03-11 05:45:30.432 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/MetricType - null null
+2026-03-11 05:45:30.437 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API)'
+2026-03-11 05:45:30.439 +05:30 [INF] Route matched with {action = "GetAll", controller = "MetricType"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetAll() on controller HealthTracker.API.Controllers.MetricTypeController (HealthTracker.API).
+2026-03-11 05:45:30.446 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Created], [m].[Name]
+FROM [MetricTypes] AS [m]
+2026-03-11 05:45:30.455 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:45:30.458 +05:30 [INF] Executed action HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API) in 15.8586ms
+2026-03-11 05:45:30.460 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API)'
+2026-03-11 05:45:30.463 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/MetricType - 200 null application/json; charset=utf-8 30.7146ms
+2026-03-11 05:45:36.493 +05:30 [INF] Request starting HTTP/1.1 PUT https://localhost:7057/api/HealthMetric/Update/3016 - application/json; charset=utf-8 39
+2026-03-11 05:45:36.503 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.Update (HealthTracker.API)'
+2026-03-11 05:45:36.504 +05:30 [INF] Route matched with {action = "Update", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(HealthTracker.Application.DTO.HealthMetric.UpdateHealthMetricDto) on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:45:36.507 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-03-11 05:45:36.511 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.Update (HealthTracker.API) in 4.1195ms
+2026-03-11 05:45:36.512 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.Update (HealthTracker.API)'
+2026-03-11 05:45:36.516 +05:30 [INF] Request finished HTTP/1.1 PUT https://localhost:7057/api/HealthMetric/Update/3016 - 400 null application/problem+json; charset=utf-8 23.2722ms
+2026-03-11 05:45:36.525 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - null null
+2026-03-11 05:45:36.529 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:45:36.534 +05:30 [INF] Route matched with {action = "GetMyMetrics", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetMyMetrics() on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:45:36.555 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Age], [u0].[Created], [u0].[Email], [u0].[IdentityUserId], [u0].[Name], [s].[Id], [s].[Created], [s].[MetricTypeId], [s].[RecordedAt], [s].[UserId], [s].[Value], [s].[Id0], [s].[Created0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+    FROM [Users] AS [u]
+    WHERE [u].[IdentityUserId] = @__userId_0
+) AS [u0]
+LEFT JOIN (
+    SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id] AS [Id0], [m].[Created] AS [Created0], [m].[Name]
+    FROM [HealthMetrics] AS [h]
+    INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+) AS [s] ON [u0].[Id] = [s].[UserId]
+ORDER BY [u0].[Id], [s].[Id]
+2026-03-11 05:45:36.562 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id], [m].[Created], [m].[Name]
+FROM [HealthMetrics] AS [h]
+INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+WHERE [h].[UserId] = @__userId_0
+ORDER BY [h].[RecordedAt] DESC
+2026-03-11 05:45:36.568 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:45:36.570 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API) in 32.5317ms
+2026-03-11 05:45:36.572 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:45:36.574 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - 200 null application/json; charset=utf-8 49.6284ms
+2026-03-11 05:47:11.180 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MetricTypes] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-11 05:47:11.560 +05:30 [INF] Executed DbCommand (61ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-11 05:47:11.735 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-11 05:47:12.073 +05:30 [INF] User profile is available. Using 'C:\Users\hello\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-11 05:47:12.587 +05:30 [INF] Now listening on: https://localhost:7057
+2026-03-11 05:47:12.589 +05:30 [INF] Now listening on: http://localhost:5171
+2026-03-11 05:47:12.928 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-11 05:47:13.184 +05:30 [INF] Hosting environment: Development
+2026-03-11 05:47:13.363 +05:30 [INF] Content root path: C:\Users\hello\source\repos\HealthTracker\HealthTracker.API
+2026-03-11 05:47:13.985 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger - null null
+2026-03-11 05:47:14.403 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger - 301 null null 445.8413ms
+2026-03-11 05:47:14.545 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-11 05:47:14.562 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_vs/browserLink - null null
+2026-03-11 05:47:14.634 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - 200 14939 application/javascript; charset=utf-8 89.051ms
+2026-03-11 05:47:14.794 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_vs/browserLink - 200 null text/javascript; charset=UTF-8 232.2403ms
+2026-03-11 05:47:14.963 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - null null
+2026-03-11 05:47:15.071 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 108.5972ms
+2026-03-11 05:47:31.079 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7057/api/Auth/Login - application/json; charset=utf-8 48
+2026-03-11 05:47:31.323 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API)'
+2026-03-11 05:47:31.379 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] Login(HealthTracker.Application.DTO.Auth.AuthRequestDto) on controller HealthTracker.API.Controllers.AuthController (HealthTracker.API).
+2026-03-11 05:47:31.777 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-11 05:47:32.371 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-03-11 05:47:32.471 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-11 05:47:32.492 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-11 05:47:32.538 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-03-11 05:47:32.611 +05:30 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-03-11 05:47:32.892 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-11 05:47:32.963 +05:30 [INF] User user@gmail.com logged in successfully.
+2026-03-11 05:47:32.992 +05:30 [INF] Executing ObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:47:33.214 +05:30 [INF] Executed action HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API) in 1825.4981ms
+2026-03-11 05:47:33.217 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API)'
+2026-03-11 05:47:33.231 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7057/api/Auth/Login - 200 null application/json; charset=utf-8 2152.8335ms
+2026-03-11 05:47:33.372 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/User/me - null null
+2026-03-11 05:47:33.571 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.UserController.GetMyProfile (HealthTracker.API)'
+2026-03-11 05:47:33.583 +05:30 [INF] Route matched with {action = "GetMyProfile", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetMyProfile() on controller HealthTracker.API.Controllers.UserController (HealthTracker.API).
+2026-03-11 05:47:33.953 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Age], [u0].[Created], [u0].[Email], [u0].[IdentityUserId], [u0].[Name], [s].[Id], [s].[Created], [s].[MetricTypeId], [s].[RecordedAt], [s].[UserId], [s].[Value], [s].[Id0], [s].[Created0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+    FROM [Users] AS [u]
+    WHERE [u].[IdentityUserId] = @__userId_0
+) AS [u0]
+LEFT JOIN (
+    SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id] AS [Id0], [m].[Created] AS [Created0], [m].[Name]
+    FROM [HealthMetrics] AS [h]
+    INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+) AS [s] ON [u0].[Id] = [s].[UserId]
+ORDER BY [u0].[Id], [s].[Id]
+2026-03-11 05:47:34.139 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:47:34.154 +05:30 [INF] Executed action HealthTracker.API.Controllers.UserController.GetMyProfile (HealthTracker.API) in 564.0466ms
+2026-03-11 05:47:34.156 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.UserController.GetMyProfile (HealthTracker.API)'
+2026-03-11 05:47:34.158 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/User/me - 200 null application/json; charset=utf-8 785.6965ms
+2026-03-11 05:47:36.485 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - null null
+2026-03-11 05:47:36.495 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:47:36.505 +05:30 [INF] Route matched with {action = "GetMyMetrics", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetMyMetrics() on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:47:36.535 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Age], [u0].[Created], [u0].[Email], [u0].[IdentityUserId], [u0].[Name], [s].[Id], [s].[Created], [s].[MetricTypeId], [s].[RecordedAt], [s].[UserId], [s].[Value], [s].[Id0], [s].[Created0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+    FROM [Users] AS [u]
+    WHERE [u].[IdentityUserId] = @__userId_0
+) AS [u0]
+LEFT JOIN (
+    SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id] AS [Id0], [m].[Created] AS [Created0], [m].[Name]
+    FROM [HealthMetrics] AS [h]
+    INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+) AS [s] ON [u0].[Id] = [s].[UserId]
+ORDER BY [u0].[Id], [s].[Id]
+2026-03-11 05:47:36.580 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id], [m].[Created], [m].[Name]
+FROM [HealthMetrics] AS [h]
+INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+WHERE [h].[UserId] = @__userId_0
+ORDER BY [h].[RecordedAt] DESC
+2026-03-11 05:47:36.596 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:47:36.603 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API) in 93.2341ms
+2026-03-11 05:47:36.606 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:47:36.608 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - 200 null application/json; charset=utf-8 122.9336ms
+2026-03-11 05:47:40.621 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/HealthMetric/3015 - null null
+2026-03-11 05:47:40.626 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API)'
+2026-03-11 05:47:40.638 +05:30 [INF] Route matched with {action = "GetById", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetById(Int32) on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:47:40.678 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id], [m].[Created], [m].[Name], [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+FROM [HealthMetrics] AS [h]
+INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+INNER JOIN [Users] AS [u] ON [h].[UserId] = [u].[Id]
+WHERE [h].[Id] = @__id_0
+2026-03-11 05:47:40.689 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:47:40.691 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API) in 50.6387ms
+2026-03-11 05:47:40.694 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API)'
+2026-03-11 05:47:40.697 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/HealthMetric/3015 - 200 null application/json; charset=utf-8 75.1833ms
+2026-03-11 05:47:40.712 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/MetricType - null null
+2026-03-11 05:47:40.715 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API)'
+2026-03-11 05:47:40.721 +05:30 [INF] Route matched with {action = "GetAll", controller = "MetricType"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetAll() on controller HealthTracker.API.Controllers.MetricTypeController (HealthTracker.API).
+2026-03-11 05:47:40.741 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Created], [m].[Name]
+FROM [MetricTypes] AS [m]
+2026-03-11 05:47:40.746 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:47:40.750 +05:30 [INF] Executed action HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API) in 25.0665ms
+2026-03-11 05:47:40.752 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API)'
+2026-03-11 05:47:40.754 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/MetricType - 200 null application/json; charset=utf-8 42.9867ms
+2026-03-11 05:47:44.670 +05:30 [INF] Request starting HTTP/1.1 PUT https://localhost:7057/api/HealthMetric/Update/3015 - application/json; charset=utf-8 39
+2026-03-11 05:47:44.674 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.Update (HealthTracker.API)'
+2026-03-11 05:47:44.679 +05:30 [INF] Route matched with {action = "Update", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(HealthTracker.Application.DTO.HealthMetric.UpdateHealthMetricDto) on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:47:44.705 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-03-11 05:47:44.729 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.Update (HealthTracker.API) in 45.9222ms
+2026-03-11 05:47:44.731 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.Update (HealthTracker.API)'
+2026-03-11 05:47:44.734 +05:30 [INF] Request finished HTTP/1.1 PUT https://localhost:7057/api/HealthMetric/Update/3015 - 400 null application/problem+json; charset=utf-8 64.4619ms
+2026-03-11 05:47:44.745 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - null null
+2026-03-11 05:47:44.751 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:47:44.753 +05:30 [INF] Route matched with {action = "GetMyMetrics", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetMyMetrics() on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:47:44.764 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Age], [u0].[Created], [u0].[Email], [u0].[IdentityUserId], [u0].[Name], [s].[Id], [s].[Created], [s].[MetricTypeId], [s].[RecordedAt], [s].[UserId], [s].[Value], [s].[Id0], [s].[Created0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+    FROM [Users] AS [u]
+    WHERE [u].[IdentityUserId] = @__userId_0
+) AS [u0]
+LEFT JOIN (
+    SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id] AS [Id0], [m].[Created] AS [Created0], [m].[Name]
+    FROM [HealthMetrics] AS [h]
+    INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+) AS [s] ON [u0].[Id] = [s].[UserId]
+ORDER BY [u0].[Id], [s].[Id]
+2026-03-11 05:47:44.772 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id], [m].[Created], [m].[Name]
+FROM [HealthMetrics] AS [h]
+INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+WHERE [h].[UserId] = @__userId_0
+ORDER BY [h].[RecordedAt] DESC
+2026-03-11 05:47:44.776 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:47:44.778 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API) in 22.8937ms
+2026-03-11 05:47:44.780 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:47:44.783 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - 200 null application/json; charset=utf-8 38.521ms
+2026-03-11 05:48:46.435 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7057/api/Auth/Login - application/json 57
+2026-03-11 05:48:46.444 +05:30 [INF] CORS policy execution successful.
+2026-03-11 05:48:46.447 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API)'
+2026-03-11 05:48:46.450 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] Login(HealthTracker.Application.DTO.Auth.AuthRequestDto) on controller HealthTracker.API.Controllers.AuthController (HealthTracker.API).
+2026-03-11 05:48:46.461 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-11 05:48:46.573 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-03-11 05:48:46.579 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-11 05:48:46.584 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-11 05:48:46.593 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-03-11 05:48:46.615 +05:30 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-03-11 05:48:46.729 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-11 05:48:46.733 +05:30 [INF] User user@gmail.com logged in successfully.
+2026-03-11 05:48:46.736 +05:30 [INF] Executing ObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:48:46.738 +05:30 [INF] Executed action HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API) in 285.123ms
+2026-03-11 05:48:46.740 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API)'
+2026-03-11 05:48:46.742 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7057/api/Auth/Login - 200 null application/json; charset=utf-8 307.6315ms
+2026-03-11 05:49:26.098 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/api/HealthMetric - null null
+2026-03-11 05:49:26.103 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetAll (HealthTracker.API)'
+2026-03-11 05:49:26.114 +05:30 [INF] Route matched with {action = "GetAll", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetAll() on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:49:26.144 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id], [m].[Created], [m].[Name], [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+FROM [HealthMetrics] AS [h]
+INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+INNER JOIN [Users] AS [u] ON [h].[UserId] = [u].[Id]
+2026-03-11 05:49:26.151 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:49:26.153 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetAll (HealthTracker.API) in 36.3451ms
+2026-03-11 05:49:26.166 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetAll (HealthTracker.API)'
+2026-03-11 05:49:26.167 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/api/HealthMetric - 200 null application/json; charset=utf-8 69.4262ms
+2026-03-11 05:50:00.747 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/api/User - null null
+2026-03-11 05:50:00.755 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (ADMIN)
+2026-03-11 05:50:00.760 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-03-11 05:50:00.761 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/api/User - 403 0 null 14.9033ms
+2026-03-11 05:50:06.771 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/api/User - null null
+2026-03-11 05:50:06.774 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (ADMIN)
+2026-03-11 05:50:06.776 +05:30 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-03-11 05:50:06.777 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/api/User - 403 0 null 6.313ms
+2026-03-11 05:50:26.258 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/api/User/me - null null
+2026-03-11 05:50:26.264 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.UserController.GetMyProfile (HealthTracker.API)'
+2026-03-11 05:50:26.266 +05:30 [INF] Route matched with {action = "GetMyProfile", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetMyProfile() on controller HealthTracker.API.Controllers.UserController (HealthTracker.API).
+2026-03-11 05:50:26.305 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Age], [u0].[Created], [u0].[Email], [u0].[IdentityUserId], [u0].[Name], [s].[Id], [s].[Created], [s].[MetricTypeId], [s].[RecordedAt], [s].[UserId], [s].[Value], [s].[Id0], [s].[Created0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+    FROM [Users] AS [u]
+    WHERE [u].[IdentityUserId] = @__userId_0
+) AS [u0]
+LEFT JOIN (
+    SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id] AS [Id0], [m].[Created] AS [Created0], [m].[Name]
+    FROM [HealthMetrics] AS [h]
+    INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+) AS [s] ON [u0].[Id] = [s].[UserId]
+ORDER BY [u0].[Id], [s].[Id]
+2026-03-11 05:50:26.314 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:50:26.317 +05:30 [INF] Executed action HealthTracker.API.Controllers.UserController.GetMyProfile (HealthTracker.API) in 46.6478ms
+2026-03-11 05:50:26.321 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.UserController.GetMyProfile (HealthTracker.API)'
+2026-03-11 05:50:26.322 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/api/User/me - 200 null application/json; charset=utf-8 64.9798ms
+2026-03-11 05:53:57.621 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/HealthMetric/2010 - null null
+2026-03-11 05:53:57.625 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API)'
+2026-03-11 05:53:57.628 +05:30 [INF] Route matched with {action = "GetById", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetById(Int32) on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:53:57.636 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id], [m].[Created], [m].[Name], [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+FROM [HealthMetrics] AS [h]
+INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+INNER JOIN [Users] AS [u] ON [h].[UserId] = [u].[Id]
+WHERE [h].[Id] = @__id_0
+2026-03-11 05:53:57.640 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:53:57.642 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API) in 12.4948ms
+2026-03-11 05:53:57.644 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API)'
+2026-03-11 05:53:57.646 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/HealthMetric/2010 - 200 null application/json; charset=utf-8 25.1293ms
+2026-03-11 05:53:57.655 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/MetricType - null null
+2026-03-11 05:53:57.660 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API)'
+2026-03-11 05:53:57.662 +05:30 [INF] Route matched with {action = "GetAll", controller = "MetricType"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetAll() on controller HealthTracker.API.Controllers.MetricTypeController (HealthTracker.API).
+2026-03-11 05:53:57.670 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Created], [m].[Name]
+FROM [MetricTypes] AS [m]
+2026-03-11 05:53:57.683 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:53:57.685 +05:30 [INF] Executed action HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API) in 19.2181ms
+2026-03-11 05:53:57.686 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API)'
+2026-03-11 05:53:57.688 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/MetricType - 200 null application/json; charset=utf-8 32.4241ms
+2026-03-11 05:54:07.093 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - null null
+2026-03-11 05:54:07.096 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:54:07.098 +05:30 [INF] Route matched with {action = "GetMyMetrics", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetMyMetrics() on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:54:07.110 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Age], [u0].[Created], [u0].[Email], [u0].[IdentityUserId], [u0].[Name], [s].[Id], [s].[Created], [s].[MetricTypeId], [s].[RecordedAt], [s].[UserId], [s].[Value], [s].[Id0], [s].[Created0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+    FROM [Users] AS [u]
+    WHERE [u].[IdentityUserId] = @__userId_0
+) AS [u0]
+LEFT JOIN (
+    SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id] AS [Id0], [m].[Created] AS [Created0], [m].[Name]
+    FROM [HealthMetrics] AS [h]
+    INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+) AS [s] ON [u0].[Id] = [s].[UserId]
+ORDER BY [u0].[Id], [s].[Id]
+2026-03-11 05:54:07.118 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id], [m].[Created], [m].[Name]
+FROM [HealthMetrics] AS [h]
+INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+WHERE [h].[UserId] = @__userId_0
+ORDER BY [h].[RecordedAt] DESC
+2026-03-11 05:54:07.123 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:54:07.128 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API) in 26.6981ms
+2026-03-11 05:54:07.130 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:54:07.131 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - 200 null application/json; charset=utf-8 38.6726ms
+2026-03-11 05:54:10.226 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/HealthMetric/2010 - null null
+2026-03-11 05:54:10.233 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API)'
+2026-03-11 05:54:10.234 +05:30 [INF] Route matched with {action = "GetById", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetById(Int32) on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:54:10.249 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id], [m].[Created], [m].[Name], [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+FROM [HealthMetrics] AS [h]
+INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+INNER JOIN [Users] AS [u] ON [h].[UserId] = [u].[Id]
+WHERE [h].[Id] = @__id_0
+2026-03-11 05:54:10.258 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:54:10.260 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API) in 22.9383ms
+2026-03-11 05:54:10.266 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetById (HealthTracker.API)'
+2026-03-11 05:54:10.268 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/HealthMetric/2010 - 200 null application/json; charset=utf-8 41.773ms
+2026-03-11 05:54:10.280 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/MetricType - null null
+2026-03-11 05:54:10.283 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API)'
+2026-03-11 05:54:10.285 +05:30 [INF] Route matched with {action = "GetAll", controller = "MetricType"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetAll() on controller HealthTracker.API.Controllers.MetricTypeController (HealthTracker.API).
+2026-03-11 05:54:10.296 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Created], [m].[Name]
+FROM [MetricTypes] AS [m]
+2026-03-11 05:54:10.300 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:54:10.303 +05:30 [INF] Executed action HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API) in 12.9311ms
+2026-03-11 05:54:10.311 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.MetricTypeController.GetAll (HealthTracker.API)'
+2026-03-11 05:54:10.313 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/MetricType - 200 null application/json; charset=utf-8 33.1333ms
+2026-03-11 05:55:34.588 +05:30 [INF] Request starting HTTP/1.1 PUT https://localhost:7057/api/HealthMetric/Update/2010 - application/json; charset=utf-8 39
+2026-03-11 05:55:34.592 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.Update (HealthTracker.API)'
+2026-03-11 05:55:34.593 +05:30 [INF] Route matched with {action = "Update", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(HealthTracker.Application.DTO.HealthMetric.UpdateHealthMetricDto) on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:55:34.597 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2026-03-11 05:55:34.599 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.Update (HealthTracker.API) in 3.3353ms
+2026-03-11 05:55:34.603 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.Update (HealthTracker.API)'
+2026-03-11 05:55:34.605 +05:30 [INF] Request finished HTTP/1.1 PUT https://localhost:7057/api/HealthMetric/Update/2010 - 400 null application/problem+json; charset=utf-8 16.6715ms
+2026-03-11 05:55:34.620 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - null null
+2026-03-11 05:55:34.623 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:55:34.625 +05:30 [INF] Route matched with {action = "GetMyMetrics", controller = "HealthMetric"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetMyMetrics() on controller HealthTracker.API.Controllers.HealthMetricController (HealthTracker.API).
+2026-03-11 05:55:34.637 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Age], [u0].[Created], [u0].[Email], [u0].[IdentityUserId], [u0].[Name], [s].[Id], [s].[Created], [s].[MetricTypeId], [s].[RecordedAt], [s].[UserId], [s].[Value], [s].[Id0], [s].[Created0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+    FROM [Users] AS [u]
+    WHERE [u].[IdentityUserId] = @__userId_0
+) AS [u0]
+LEFT JOIN (
+    SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id] AS [Id0], [m].[Created] AS [Created0], [m].[Name]
+    FROM [HealthMetrics] AS [h]
+    INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+) AS [s] ON [u0].[Id] = [s].[UserId]
+ORDER BY [u0].[Id], [s].[Id]
+2026-03-11 05:55:34.644 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id], [m].[Created], [m].[Name]
+FROM [HealthMetrics] AS [h]
+INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+WHERE [h].[UserId] = @__userId_0
+ORDER BY [h].[RecordedAt] DESC
+2026-03-11 05:55:34.647 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-11 05:55:34.649 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API) in 22.2291ms
+2026-03-11 05:55:34.655 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
+2026-03-11 05:55:34.656 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - 200 null application/json; charset=utf-8 36.4601ms

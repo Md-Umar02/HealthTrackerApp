@@ -1,51 +1,87 @@
 ﻿@page
 @model HealthTracker.Web.Pages.HealthMetrics.IndexModel
-
-<h2>My Health Metrics</h2>
-
-@if(TempData["SuccessMessage"] != null)
-{
-    <script>    
-        alert("@TempData["SuccessMessage"]");
-    </script>
+@{
+    ViewData["Title"] = "My Health Metrics";
 }
 
-<a asp-page="/HealthMetrics/Create">➕ Add Health Metric</a>
+<!-- CSS Files -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link href="~/css/healthmetrics.css" rel="stylesheet" />
 
-<br /><br />
-
-@if (Model.Metrics.Any())
+<!-- Hidden field for success message -->
+@if (TempData["SuccessMessage"] != null)
 {
-    <table border="1" cellpadding="5">
-        <tr>
-            <th>Date</th>
-            <th>Metric</th>
-            <th>Value</th>
-            <th>Action</th>
-        </tr>
-        @foreach (var item in Model.Metrics)
-        {
-            <tr>
-                <td>@item.RecordedAt.ToShortDateString()</td>
-                <td>@item.MetricType</td>
-                <td>@item.Value</td>
+    <input type="hidden" id="successMessage" value="@TempData["SuccessMessage"]" />
+}
 
-                <td>
-                    <form method="post"
-                        asp-page-handler="Delete">
-                        <input type="hidden" name="id"
-                            value="@item.Id"/>
-                            <button type="submit"
-                                onclick="return confirm('Are you sure you want to delete this record?');">
-                                🗑️ Delete
-                            </button>
-                    </form>
-                </td>
-            </tr>
-        }
-    </table>
-}
-else
-{
-    <p>No health records found.</p>
-}
+<div class="metrics-container">
+    <div class="page-header">
+        <h2 class="page-title">
+            <i class="bi bi-heart-pulse me-2"></i>My Health Metrics
+        </h2>
+        <a asp-page="/HealthMetrics/Create" class="btn-add">
+            <i class="bi bi-plus-circle"></i> Add Health Metric
+        </a>
+    </div>
+
+    @if (Model.Metrics.Any())
+    {
+        <div class="table-responsive">
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th><i class="bi bi-calendar3 me-1"></i> Date</th>
+                        <th><i class="bi bi-bar-chart-line me-1"></i> Metric</th>
+                        <th><i class="bi bi-123 me-1"></i> Value</th>
+                        <th><i class="bi bi-gear me-1"></i> Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Metrics)
+                    {
+                        <tr>
+                            <td>@item.RecordedAt.ToShortDateString()</td>
+                            <td>@item.MetricType</td>
+                            <td>@item.Value</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a asp-page="/HealthMetrics/Edit"
+                                           asp-route-id="@item.Id"
+                                           class="btn-edit">
+                                        <i class="bi bi-pencil-square"></i> Edit
+                                    </a>
+
+                                    <form method="post"
+                                          asp-page-handler="Delete"
+                                          style="margin:0;">
+                                        <input type="hidden" name="id" value="@item.Id" />
+                                        <button type="submit"
+                                                class="btn-delete"
+                                                onclick="return confirmDelete();">
+                                            <i class="bi bi-trash"></i> Delete
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="empty-state">
+            <i class="bi bi-clipboard-heart"></i>
+            <p>No health records found.</p>
+            <a asp-page="/HealthMetrics/Create" class="btn-add" style="display: inline-flex;">
+                <i class="bi bi-plus-circle"></i> Add Your First Metric
+            </a>
+        </div>
+    }
+</div>
+
+<!-- JavaScript Files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/healthmetrics.js"></script>

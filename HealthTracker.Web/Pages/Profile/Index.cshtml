@@ -1,41 +1,131 @@
 ﻿@page
 @model HealthTracker.Web.Pages.Profile.IndexModel
+@{
+    ViewData["Title"] = "My Profile";
+}
 
-<h2>My Profile</h2>
+<!-- CSS Files -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link href="~/css/profile.css" rel="stylesheet" />
 
-@if (Model.User != null)
-{
-    <p><b>Name:</b> @Model.User.Name</p>
-    <p><b>Email:</b> @Model.User.Email</p>
-    <p><b>Age:</b> @Model.User.Age</p>
-
-    <h3>Health Metrics</h3>
-
-    @if (Model.User.HealthMetrics != null && Model.User.HealthMetrics.Any())
+<div class="profile-container">
+    @if (Model.User != null)
     {
-        <table border="1" cellpadding="5">
-            <tr>
-                <th>Metric</th>
-                <th>Value</th>
-            </tr>
-            @foreach (var metric in Model.User.HealthMetrics.Take(5))
-            {
-                <tr>
-                    <td>@metric.MetricType</td>
-                    <td>@metric.Value</td>
-                </tr>
-            }
-        </table>
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="bi bi-person-circle"></i>
+                </div>
+                <h2>@Model.User.Name</h2>
+            </div>
+            
+            <div class="profile-body">
+                <!-- Personal Information -->
+                <div class="info-section">
+                    <h3>
+                        <i class="bi bi-person-badge"></i>
+                        Personal Information
+                    </h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">
+                                <i class="bi bi-envelope"></i> Email Address
+                            </div>
+                            <div class="info-value">@Model.User.Email</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">
+                                <i class="bi bi-calendar3"></i> Age
+                            </div>
+                            <div class="info-value">@Model.User.Age years</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Health Metrics -->
+                <div class="info-section">
+                    <h3>
+                        <i class="bi bi-heart-pulse"></i>
+                        Recent Health Metrics
+                    </h3>
+                    
+                    @if (Model.User.HealthMetrics != null && Model.User.HealthMetrics.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="metrics-table">
+                                <thead>
+                                    <tr>
+                                        <th><i class="bi bi-bar-chart-line me-1"></i> Metric</th>
+                                        <th><i class="bi bi-123 me-1"></i> Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var metric in Model.User.HealthMetrics.Take(5))
+                                    {
+                                        <tr>
+                                            <td>@metric.MetricType</td>
+                                            <td><strong>@metric.Value</strong></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        @if (Model.User.HealthMetrics.Count() > 5)
+                        {
+                            <div class="text-muted mt-2 small">
+                                <i class="bi bi-info-circle"></i>
+                                Showing last 5 metrics. <a href="/HealthMetrics/Index">View all @Model.User.HealthMetrics.Count() metrics</a>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="empty-state">
+                            <i class="bi bi-clipboard-heart"></i>
+                            <p>No health metrics recorded yet.</p>
+                            <a href="/HealthMetrics/Create" class="btn-primary" style="display: inline-flex;">
+                                <i class="bi bi-plus-circle"></i> Add Your First Metric
+                            </a>
+                        </div>
+                    }
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <a href="/HealthMetrics/Create" class="btn-primary">
+                        <i class="bi bi-plus-circle"></i> Add Health Metric
+                    </a>
+                    <a href="/HealthMetrics/Index" class="btn-secondary">
+                        <i class="bi bi-table"></i> View All Metrics
+                    </a>
+                    <a href="/Auth/Logout" class="btn-danger"
+                           onclick="return confirm('Are you sure you want to logout?');">
+                        <i class="bi bi-box-arrow-right"></i> Logout
+                    </a>
+                </div>
+            </div>
+        </div>
     }
     else
     {
-        <p>No health metrics found.</p>
+        
     }
+    @* {
+        <div class="profile-card">
+            <div class="profile-body" style="text-align: center; padding: 50px;">
+                <i class="bi bi-exclamation-triangle" style="font-size: 3rem; color: #dc3545;"></i>
+                <h3>User Not Found</h3>
+                <p>Unable to load your profile information.</p>
+                <a href="/" class="btn-primary" style="display: inline-flex; margin-top: 20px;">
+                    <i class="bi bi-house"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    } *@
+</div>
 
-    <br />
-    <a asp-page="/HealthMetrics/Create">Add Health Metric</a>
-    <br /><br />
-    <a asp-page="/HealthMetrics/Index">View All Metrics</a>
-    <br /><br />
-    <a asp-page="/Auth/Logout">Logout</a>
-}
+<!-- JavaScript Files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/profile.js"></script>
