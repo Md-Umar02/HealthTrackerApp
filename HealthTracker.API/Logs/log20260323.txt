@@ -424,3 +424,277 @@ ORDER BY [h].[RecordedAt] DESC
 2026-03-23 17:04:06.651 +05:30 [INF] Executed action HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API) in 52.8488ms
 2026-03-23 17:04:06.653 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.HealthMetricController.GetMyMetrics (HealthTracker.API)'
 2026-03-23 17:04:06.656 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/healthmetric/me - 200 null application/json; charset=utf-8 65.6173ms
+2026-03-23 17:59:16.841 +05:30 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MetricTypes] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-23 17:59:17.287 +05:30 [INF] Executed DbCommand (74ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-23 17:59:17.363 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-23 17:59:17.516 +05:30 [INF] User profile is available. Using 'C:\Users\hello\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-23 17:59:17.786 +05:30 [INF] Now listening on: https://localhost:7057
+2026-03-23 17:59:17.787 +05:30 [INF] Now listening on: http://localhost:5171
+2026-03-23 17:59:17.855 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-23 17:59:17.857 +05:30 [INF] Hosting environment: Development
+2026-03-23 17:59:17.858 +05:30 [INF] Content root path: C:\Users\hello\source\repos\HealthTracker\HealthTracker.API
+2026-03-23 17:59:19.019 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger - null null
+2026-03-23 17:59:19.298 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger - 301 null null 288.982ms
+2026-03-23 17:59:19.475 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_vs/browserLink - null null
+2026-03-23 17:59:19.491 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-23 17:59:19.582 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - 200 14939 application/javascript; charset=utf-8 91.3791ms
+2026-03-23 17:59:19.699 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_vs/browserLink - 200 null text/javascript; charset=UTF-8 224.1422ms
+2026-03-23 17:59:19.953 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - null null
+2026-03-23 17:59:20.115 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 164.7209ms
+2026-03-23 17:59:37.044 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7057/api/Auth/Login - application/json; charset=utf-8 48
+2026-03-23 17:59:37.203 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API)'
+2026-03-23 17:59:37.249 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] Login(HealthTracker.Application.DTO.Auth.AuthRequestDto) on controller HealthTracker.API.Controllers.AuthController (HealthTracker.API).
+2026-03-23 17:59:37.596 +05:30 [INF] Executed DbCommand (73ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-23 17:59:37.890 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-03-23 17:59:37.944 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-23 17:59:37.953 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-23 17:59:37.965 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-03-23 17:59:37.994 +05:30 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-03-23 17:59:38.134 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-23 17:59:38.173 +05:30 [INF] User user@gmail.com logged in successfully.
+2026-03-23 17:59:38.190 +05:30 [INF] Executing ObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-23 17:59:38.227 +05:30 [INF] Executed action HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API) in 970.128ms
+2026-03-23 17:59:38.229 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API)'
+2026-03-23 17:59:38.236 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7057/api/Auth/Login - 200 null application/json; charset=utf-8 1192.711ms
+2026-03-23 17:59:38.287 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7057/api/User/me - null null
+2026-03-23 17:59:38.382 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.UserController.GetMyProfile (HealthTracker.API)'
+2026-03-23 17:59:38.388 +05:30 [INF] Route matched with {action = "GetMyProfile", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] GetMyProfile() on controller HealthTracker.API.Controllers.UserController (HealthTracker.API).
+2026-03-23 17:59:38.702 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u0].[Id], [u0].[Age], [u0].[Created], [u0].[Email], [u0].[IdentityUserId], [u0].[Name], [s].[Id], [s].[Created], [s].[MetricTypeId], [s].[RecordedAt], [s].[UserId], [s].[Value], [s].[Id0], [s].[Created0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Age], [u].[Created], [u].[Email], [u].[IdentityUserId], [u].[Name]
+    FROM [Users] AS [u]
+    WHERE [u].[IdentityUserId] = @__userId_0
+) AS [u0]
+LEFT JOIN (
+    SELECT [h].[Id], [h].[Created], [h].[MetricTypeId], [h].[RecordedAt], [h].[UserId], [h].[Value], [m].[Id] AS [Id0], [m].[Created] AS [Created0], [m].[Name]
+    FROM [HealthMetrics] AS [h]
+    INNER JOIN [MetricTypes] AS [m] ON [h].[MetricTypeId] = [m].[Id]
+) AS [s] ON [u0].[Id] = [s].[UserId]
+ORDER BY [u0].[Id], [s].[Id]
+2026-03-23 17:59:38.792 +05:30 [INF] Executing OkObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-23 17:59:38.804 +05:30 [INF] Executed action HealthTracker.API.Controllers.UserController.GetMyProfile (HealthTracker.API) in 413.3342ms
+2026-03-23 17:59:38.806 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.UserController.GetMyProfile (HealthTracker.API)'
+2026-03-23 17:59:38.808 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7057/api/User/me - 200 null application/json; charset=utf-8 520.5424ms
+2026-03-23 21:39:04.052 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MetricTypes] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-23 21:39:04.366 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-23 21:39:04.433 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-23 21:39:04.698 +05:30 [INF] User profile is available. Using 'C:\Users\hello\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-23 21:39:05.099 +05:30 [INF] Now listening on: https://localhost:7057
+2026-03-23 21:39:05.100 +05:30 [INF] Now listening on: http://localhost:5171
+2026-03-23 21:39:05.197 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-23 21:39:05.198 +05:30 [INF] Hosting environment: Development
+2026-03-23 21:39:05.200 +05:30 [INF] Content root path: C:\Users\hello\source\repos\HealthTracker\HealthTracker.API
+2026-03-23 21:39:07.480 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger - null null
+2026-03-23 21:39:08.074 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger - 301 null null 613.4085ms
+2026-03-23 21:39:08.252 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-23 21:39:08.252 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_vs/browserLink - null null
+2026-03-23 21:39:08.282 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - 200 14939 application/javascript; charset=utf-8 30.3149ms
+2026-03-23 21:39:08.377 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_vs/browserLink - 200 null text/javascript; charset=UTF-8 124.5808ms
+2026-03-23 21:39:08.637 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - null null
+2026-03-23 21:39:08.696 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 59.3901ms
+2026-03-23 21:49:43.771 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [MetricTypes] AS [m]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-03-23 21:49:44.337 +05:30 [INF] Executed DbCommand (91ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-23 21:49:44.475 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-23 21:49:44.756 +05:30 [INF] User profile is available. Using 'C:\Users\hello\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-23 21:49:45.159 +05:30 [INF] Now listening on: https://localhost:7057
+2026-03-23 21:49:45.160 +05:30 [INF] Now listening on: http://localhost:5171
+2026-03-23 21:49:45.302 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-23 21:49:45.303 +05:30 [INF] Hosting environment: Development
+2026-03-23 21:49:45.304 +05:30 [INF] Content root path: C:\Users\hello\source\repos\HealthTracker\HealthTracker.API
+2026-03-23 21:49:46.484 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger - null null
+2026-03-23 21:49:46.759 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger - 301 null null 303.098ms
+2026-03-23 21:49:46.878 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-23 21:49:46.879 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/_vs/browserLink - null null
+2026-03-23 21:49:46.903 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_framework/aspnetcore-browser-refresh.js - 200 14939 application/javascript; charset=utf-8 24.96ms
+2026-03-23 21:49:46.950 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/_vs/browserLink - 200 null text/javascript; charset=UTF-8 71.3951ms
+2026-03-23 21:49:47.193 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - null null
+2026-03-23 21:49:47.270 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 76.5113ms
+2026-03-23 21:50:28.624 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7057/api/Auth/Login - application/json 57
+2026-03-23 21:50:28.672 +05:30 [INF] CORS policy execution successful.
+2026-03-23 21:50:28.859 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API)'
+2026-03-23 21:50:28.909 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[HealthTracker.Application.Common.APIResponse]] Login(HealthTracker.Application.DTO.Auth.AuthRequestDto) on controller HealthTracker.API.Controllers.AuthController (HealthTracker.API).
+2026-03-23 21:50:29.189 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Name], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-03-23 21:50:29.624 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-03-23 21:50:29.666 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-23 21:50:29.673 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-03-23 21:50:29.685 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-03-23 21:50:29.731 +05:30 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-03-23 21:50:29.903 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-03-23 21:50:29.946 +05:30 [INF] User user@gmail.com logged in successfully.
+2026-03-23 21:50:29.960 +05:30 [INF] Executing ObjectResult, writing value of type 'HealthTracker.Application.Common.APIResponse'.
+2026-03-23 21:50:29.992 +05:30 [INF] Executed action HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API) in 1072.4562ms
+2026-03-23 21:50:29.996 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.AuthController.Login (HealthTracker.API)'
+2026-03-23 21:50:30.013 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7057/api/Auth/Login - 200 null application/json; charset=utf-8 1389.7019ms
+2026-03-23 21:51:19.114 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/api/AI/insights - null null
+2026-03-23 21:51:19.239 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AIController.GetInsights (HealthTracker.API)'
+2026-03-23 21:51:19.246 +05:30 [INF] Route matched with {action = "GetInsights", controller = "AI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetInsights() on controller HealthTracker.API.Controllers.AIController (HealthTracker.API).
+2026-03-23 21:51:19.265 +05:30 [INF] Executed action HealthTracker.API.Controllers.AIController.GetInsights (HealthTracker.API) in 16.45ms
+2026-03-23 21:51:19.269 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.AIController.GetInsights (HealthTracker.API)'
+2026-03-23 21:51:19.380 +05:30 [ERR] A suitable constructor for type 'HealthTracker.Application.Services.AIService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided.
+System.InvalidOperationException: A suitable constructor for type 'HealthTracker.Application.Services.AIService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfoEx[] constructors, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactoryInternal(Type instanceType, Type[] argumentTypes, ParameterExpression& provider, ParameterExpression& argumentArray, Expression& factoryExpressionBody)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.Cache.get_Activator()
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.CreateClient(HttpClient httpClient)
+   at Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.AddTransientHelper[TClient,TImplementation](IServiceProvider s, IHttpClientBuilder builder)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method213(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at HealthTracker.API.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\hello\source\repos\HealthTracker\HealthTracker.API\Middlewares\ExceptionMiddleware.cs:line 23
+2026-03-23 21:51:19.506 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/api/AI/insights - 500 null application/json 391.5528ms
+2026-03-23 21:51:51.923 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/api/AI/insights - null null
+2026-03-23 21:51:51.933 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AIController.GetInsights (HealthTracker.API)'
+2026-03-23 21:51:51.935 +05:30 [INF] Route matched with {action = "GetInsights", controller = "AI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetInsights() on controller HealthTracker.API.Controllers.AIController (HealthTracker.API).
+2026-03-23 21:51:51.942 +05:30 [INF] Executed action HealthTracker.API.Controllers.AIController.GetInsights (HealthTracker.API) in 2.0923ms
+2026-03-23 21:51:51.944 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.AIController.GetInsights (HealthTracker.API)'
+2026-03-23 21:51:51.981 +05:30 [ERR] A suitable constructor for type 'HealthTracker.Application.Services.AIService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided.
+System.InvalidOperationException: A suitable constructor for type 'HealthTracker.Application.Services.AIService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfoEx[] constructors, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactoryInternal(Type instanceType, Type[] argumentTypes, ParameterExpression& provider, ParameterExpression& argumentArray, Expression& factoryExpressionBody)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.Cache.get_Activator()
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.CreateClient(HttpClient httpClient)
+   at Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.AddTransientHelper[TClient,TImplementation](IServiceProvider s, IHttpClientBuilder builder)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method213(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at HealthTracker.API.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\hello\source\repos\HealthTracker\HealthTracker.API\Middlewares\ExceptionMiddleware.cs:line 23
+2026-03-23 21:51:51.998 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/api/AI/insights - 500 null application/json 74.9526ms
+2026-03-23 21:51:55.591 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7057/api/AI/insights - null null
+2026-03-23 21:51:55.595 +05:30 [INF] Executing endpoint 'HealthTracker.API.Controllers.AIController.GetInsights (HealthTracker.API)'
+2026-03-23 21:51:55.596 +05:30 [INF] Route matched with {action = "GetInsights", controller = "AI"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetInsights() on controller HealthTracker.API.Controllers.AIController (HealthTracker.API).
+2026-03-23 21:51:55.605 +05:30 [INF] Executed action HealthTracker.API.Controllers.AIController.GetInsights (HealthTracker.API) in 5.1626ms
+2026-03-23 21:51:55.609 +05:30 [INF] Executed endpoint 'HealthTracker.API.Controllers.AIController.GetInsights (HealthTracker.API)'
+2026-03-23 21:51:55.647 +05:30 [ERR] A suitable constructor for type 'HealthTracker.Application.Services.AIService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided.
+System.InvalidOperationException: A suitable constructor for type 'HealthTracker.Application.Services.AIService' could not be located. Ensure the type is concrete and all parameters of a public constructor are either registered as services or passed as arguments. Also ensure no extraneous arguments are provided.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfoEx[] constructors, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactoryInternal(Type instanceType, Type[] argumentTypes, ParameterExpression& provider, ParameterExpression& argumentArray, Expression& factoryExpressionBody)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.Cache.get_Activator()
+   at Microsoft.Extensions.Http.DefaultTypedHttpClientFactory`1.CreateClient(HttpClient httpClient)
+   at Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.AddTransientHelper[TClient,TImplementation](IServiceProvider s, IHttpClientBuilder builder)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at lambda_method213(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at HealthTracker.API.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\hello\source\repos\HealthTracker\HealthTracker.API\Middlewares\ExceptionMiddleware.cs:line 23
+2026-03-23 21:51:55.669 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7057/api/AI/insights - 500 null application/json 78.0783ms

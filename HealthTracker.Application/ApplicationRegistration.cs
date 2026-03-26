@@ -23,6 +23,8 @@ namespace HealthTracker.Application
 
             services.AddScoped<IAuthService, AuthService>();
 
+            services.AddHttpClient<IAIService, AIService>();
+
             return services;
         }
     }
